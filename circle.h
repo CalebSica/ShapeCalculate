@@ -22,6 +22,8 @@ private slots:
 
     void on_area_textEdited(const QString &arg1);
 
+    void on_pushButton_clicked();
+
 private:
     Ui::Circle *ui;
 };

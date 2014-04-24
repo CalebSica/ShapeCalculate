@@ -1,6 +1,7 @@
 #include "circle.h"
 #include "ui_circle.h"
 #include "math.h"
+#include "calculate.h"
 
 const double pi = 3.14159;
 
@@ -70,4 +71,11 @@ void Circle::on_area_textEdited(const QString &arg1) {
     else {
         ui->radius->setText(QString::number(radius));
     }
+}
+
+void Circle::on_pushButton_clicked() {
+    Calculate* w = new Calculate;
+    w->setAttribute(Qt::WA_DeleteOnClose);
+    w->show();
+    this->close();
 }
