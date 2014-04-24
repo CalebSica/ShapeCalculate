@@ -1,6 +1,7 @@
 #include "calculate.h"
 #include "ui_calculate.h"
 #include "circle.h"
+#include "rectangle.h"
 
 Calculate::Calculate(QWidget *parent) :
     QMainWindow(parent),
@@ -14,6 +15,15 @@ Calculate::~Calculate() {
 
 void Calculate::on_bCircle_clicked() {
     Circle* w = new Circle;
+    w->setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    w->setAttribute(Qt::WA_DeleteOnClose);
+    w->show();
+    this->close();
+}
+
+void Calculate::on_bParallel_clicked() {
+    Rectangle* w = new Rectangle();
+    w->setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     w->setAttribute(Qt::WA_DeleteOnClose);
     w->show();
     this->close();

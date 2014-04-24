@@ -50,7 +50,20 @@
      </rect>
     </property>
     <property name="text">
-     <string>Brock is Gay Inc. ©2014 </string>
+     <string>LOL Inc. ©2014 </string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="bParallel">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>40</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Parallelogram</string>
     </property>
    </widget>
   </widget>

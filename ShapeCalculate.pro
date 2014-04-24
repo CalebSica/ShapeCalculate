@@ -14,10 +14,13 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         calculate.cpp \
-    circle.cpp
+    circle.cpp \
+    rectangle.cpp
 
 HEADERS  += calculate.h \
-    circle.h
+    circle.h \
+    rectangle.h
 
 FORMS    += calculate.ui \
-    circle.ui
+    circle.ui \
+    rectangle.ui
