@@ -7,18 +7,16 @@ const double pi = 3.14159;
 
 Circle::Circle(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::Circle)
-    {
+    ui(new Ui::Circle) {
         ui->setupUi(this);
     }
 
-Circle::~Circle()
-{
+Circle::~Circle() {
     delete ui;
 }
 
 void Circle::on_radius_textEdited(const QString &arg1) {
-    double radImput = ui->radius->text().toDouble();
+    double radImput = arg1.toDouble();
     double area = pi * radImput * radImput;
     if (area == 0) {
         ui->area->setText("");
@@ -37,7 +35,8 @@ void Circle::on_radius_textEdited(const QString &arg1) {
 }
 
 void Circle::on_circum_textEdited(const QString &arg1) {
-    double area = (ui->circum->text().toDouble() * ui->circum->text().toDouble()) / (4 * pi);
+    double cirImput = arg1.toDouble();
+    double area = (cirImput * cirImput) / (4 * pi);
     if (area == 0) {
         ui->area->setText("");
     }
@@ -45,7 +44,7 @@ void Circle::on_circum_textEdited(const QString &arg1) {
         ui->area->setText(QString::number(area));
     }
 
-    double radius = ui->circum->text().toDouble() / (2 * pi);
+    double radius = cirImput / (2 * pi);
     if (radius == 0) {
         ui->radius->setText("");
     }
@@ -55,7 +54,7 @@ void Circle::on_circum_textEdited(const QString &arg1) {
 }
 
 void Circle::on_area_textEdited(const QString &arg1) {
-    double areaImput = ui->area->text().toDouble();
+    double areaImput = arg1.toDouble();
     double cir = 2 * sqrt(pi * areaImput);
     if (cir == 0) {
         ui->circum->setText("");

@@ -4,8 +4,7 @@
 
 Calculate::Calculate(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::Calculate)
-    {
+    ui(new Ui::Calculate) {
        ui->setupUi(this);
     }
 
