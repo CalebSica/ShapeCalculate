@@ -47,8 +47,8 @@ void Rectangle::on_checkBox_toggled(bool checked) {
 }
 
 void Rectangle::on_lBase_textEdited(const QString &arg1) {
+    double baseImput = arg1.toDouble();
     if (square) {
-        double baseImput = arg1.toDouble();
         ui->lPeri->setText(QString::number(baseImput * 4));
         ui->lArea->setText(QString::number(baseImput * baseImput));
     }
@@ -57,6 +57,16 @@ void Rectangle::on_lBase_textEdited(const QString &arg1) {
             ui->lAlt->setPlaceholderText("Not enough info");
             ui->lArea->setPlaceholderText("Not enough info");
             ui->lPeri->setPlaceholderText("Not enough info");
+            ui->lBase->setPlaceholderText("Not enough info");
+        }
+        else if (ui->lAlt->text() != "") {
+            ui->lAlt->setPlaceholderText("");
+            ui->lArea->setPlaceholderText("");
+            ui->lPeri->setPlaceholderText("");
+            ui->lBase->setPlaceholderText("");
+            double altImput = ui->lAlt->text().toDouble();
+            ui->lArea->setText(QString::number(baseImput * altImput));
+            ui->lPeri->setText(QString::number((baseImput + altImput) * 2));
         }
     }
 }
@@ -73,6 +83,7 @@ void Rectangle::on_lArea_textEdited(const QString &arg1) {
             ui->lAlt->setPlaceholderText("Not enough info");
             ui->lBase->setPlaceholderText("Not enough info");
             ui->lPeri->setPlaceholderText("Not enough info");
+            ui->lArea->setPlaceholderText("Not enough info");
         }
     }
 }
@@ -89,17 +100,29 @@ void Rectangle::on_lPeri_textEdited(const QString &arg1) {
             ui->lAlt->setPlaceholderText("Not enough info");
             ui->lArea->setPlaceholderText("Not enough info");
             ui->lBase->setPlaceholderText("Not enough info");
+            ui->lPeri->setPlaceholderText("Not enough info");
         }
     }
 }
 
 void Rectangle::on_lAlt_textEdited(const QString &arg1) {
+    double altImput = arg1.toDouble();
     if (square) {}
     else {
         if ((ui->lBase->text() == "") && (ui->lBase->text() == "") && (ui->lPeri->text() == "")) {
             ui->lBase->setPlaceholderText("Not enough info");
-            ui->lBase->setPlaceholderText("Not enough info");
+            ui->lArea->setPlaceholderText("Not enough info");
             ui->lPeri->setPlaceholderText("Not enough info");
+            ui->lAlt->setPlaceholderText("Not enough info");
+        }
+        else if (ui->lBase->text() != "") {
+            ui->lAlt->setPlaceholderText("");
+            ui->lArea->setPlaceholderText("");
+            ui->lPeri->setPlaceholderText("");
+            ui->lBase->setPlaceholderText("");
+            double baseImput = ui->lBase->text().toDouble();
+            ui->lArea->setText(QString::number(baseImput * altImput));
+            ui->lPeri->setText(QString::number((baseImput + altImput) * 2));
         }
     }
 }
