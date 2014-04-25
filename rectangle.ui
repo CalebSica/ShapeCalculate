@@ -128,7 +128,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Is it a rhombus?</string>
+    <string>Is it a square?</string>
    </property>
   </widget>
  </widget>

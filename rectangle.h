@@ -22,6 +22,12 @@ private slots:
 
     void on_lBase_textEdited(const QString &arg1);
 
+    void on_lArea_textEdited(const QString &arg1);
+
+    void on_lPeri_textEdited(const QString &arg1);
+
+    void on_lAlt_textEdited(const QString &arg1);
+
 private:
     Ui::Rectangle *ui;
 };

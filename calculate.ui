@@ -53,7 +53,7 @@
      <string>LOL Inc. ©2014 </string>
     </property>
    </widget>
-   <widget class="QPushButton" name="bParallel">
+   <widget class="QPushButton" name="bRect">
     <property name="geometry">
      <rect>
       <x>250</x>
@@ -63,7 +63,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Parallelogram</string>
+     <string>Rectangle</string>
     </property>
    </widget>
   </widget>

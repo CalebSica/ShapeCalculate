@@ -18,7 +18,7 @@ public:
 private slots:
     void on_bCircle_clicked();
 
-    void on_bParallel_clicked();
+    void on_bRect_clicked();
 
 private:
     Ui::Calculate *ui;
