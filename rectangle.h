@@ -28,6 +28,8 @@ private slots:
 
     void on_lAlt_textEdited(const QString &arg1);
 
+    void on_cArea_toggled(bool checked);
+
 private:
     Ui::Rectangle *ui;
 };

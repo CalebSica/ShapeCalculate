@@ -20,6 +20,8 @@ private slots:
 
     void on_bRect_clicked();
 
+    void on_bCircle_2_clicked();
+
 private:
     Ui::Calculate *ui;
 };

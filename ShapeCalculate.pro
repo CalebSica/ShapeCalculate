@@ -15,12 +15,15 @@ TEMPLATE = app
 SOURCES += main.cpp\
         calculate.cpp \
     circle.cpp \
-    rectangle.cpp
+    rectangle.cpp \
+    sphere.cpp
 
 HEADERS  += calculate.h \
     circle.h \
-    rectangle.h
+    rectangle.h \
+    sphere.h
 
 FORMS    += calculate.ui \
     circle.ui \
-    rectangle.ui
+    rectangle.ui \
+    sphere.ui

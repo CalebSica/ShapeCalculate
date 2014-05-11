@@ -4,6 +4,8 @@
 #include "math.h"
 
 bool square = false;
+bool oneChecked = false;
+bool twoChecked = true;
 
 Rectangle::Rectangle(QWidget *parent) :
     QDialog(parent),
@@ -53,21 +55,9 @@ void Rectangle::on_lBase_textEdited(const QString &arg1) {
         ui->lArea->setText(QString::number(baseImput * baseImput));
     }
     else {
-        if ((ui->lAlt->text() == "") && (ui->lArea->text() == "") && (ui->lPeri->text() == "")) {
-            ui->lAlt->setPlaceholderText("Not enough info");
-            ui->lArea->setPlaceholderText("Not enough info");
-            ui->lPeri->setPlaceholderText("Not enough info");
-            ui->lBase->setPlaceholderText("Not enough info");
-        }
-        else if (ui->lAlt->text() != "") {
-            ui->lAlt->setPlaceholderText("");
-            ui->lArea->setPlaceholderText("");
-            ui->lPeri->setPlaceholderText("");
-            ui->lBase->setPlaceholderText("");
-            double altImput = ui->lAlt->text().toDouble();
-            ui->lArea->setText(QString::number(baseImput * altImput));
-            ui->lPeri->setText(QString::number((baseImput + altImput) * 2));
-        }
+        //double altImput = ui->lAlt->text().toDouble();
+        //ui->lArea->setText(QString::number(baseImput * altImput));
+        //ui->lPeri->setText(QString::number((baseImput + altImput) * 2));
     }
 }
 
@@ -79,12 +69,7 @@ void Rectangle::on_lArea_textEdited(const QString &arg1) {
         ui->lPeri->setText(QString::number(side * 4));
     }
     else {
-        if ((ui->lAlt->text() == "") && (ui->lBase->text() == "") && (ui->lPeri->text() == "")) {
-            ui->lAlt->setPlaceholderText("Not enough info");
-            ui->lBase->setPlaceholderText("Not enough info");
-            ui->lPeri->setPlaceholderText("Not enough info");
-            ui->lArea->setPlaceholderText("Not enough info");
-        }
+
     }
 }
 
@@ -96,33 +81,23 @@ void Rectangle::on_lPeri_textEdited(const QString &arg1) {
         ui->lArea->setText(QString::number(side * side));
     }
     else {
-        if ((ui->lAlt->text() == "") && (ui->lArea->text() == "") && (ui->lBase->text() == "")) {
-            ui->lAlt->setPlaceholderText("Not enough info");
-            ui->lArea->setPlaceholderText("Not enough info");
-            ui->lBase->setPlaceholderText("Not enough info");
-            ui->lPeri->setPlaceholderText("Not enough info");
-        }
+
     }
 }
 
 void Rectangle::on_lAlt_textEdited(const QString &arg1) {
     double altImput = arg1.toDouble();
-    if (square) {}
-    else {
+    if (!square) {
         if ((ui->lBase->text() == "") && (ui->lBase->text() == "") && (ui->lPeri->text() == "")) {
             ui->lBase->setPlaceholderText("Not enough info");
             ui->lArea->setPlaceholderText("Not enough info");
             ui->lPeri->setPlaceholderText("Not enough info");
             ui->lAlt->setPlaceholderText("Not enough info");
         }
-        else if (ui->lBase->text() != "") {
-            ui->lAlt->setPlaceholderText("");
-            ui->lArea->setPlaceholderText("");
-            ui->lPeri->setPlaceholderText("");
-            ui->lBase->setPlaceholderText("");
-            double baseImput = ui->lBase->text().toDouble();
-            ui->lArea->setText(QString::number(baseImput * altImput));
-            ui->lPeri->setText(QString::number((baseImput + altImput) * 2));
+        else {
+            //double baseImput = ui->lBase->text().toDouble();
+            //ui->lArea->setText(QString::number(baseImput * altImput));
+            //ui->lPeri->setText(QString::number((baseImput + altImput) * 2));
         }
     }
 }
